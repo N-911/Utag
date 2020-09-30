@@ -159,9 +159,6 @@ QVector<QString> read_tags(char *file_name, char *file_path) {
                 longest = i->first.size();
             }
         }
-
-//        cout << "-- TAG (properties) --" << endl;
-
 /*
         for (TagLib::PropertyMap::ConstIterator i = tags.begin(); i != tags.end(); ++i) {
             for (TagLib::StringList::ConstIterator j = i->second.begin(); j != i->second.end(); ++j) {
@@ -285,17 +282,13 @@ void modify_tag_track(QVector<QString>& changes) {
     f.save();
 }
 
-
 //{"Name", "Time", "Title", "Artist", "Genre", "Album", "Year", "Track", "Path", "Comment" };
 
 bool modify_tags(QVector<QString>& changes) {
     if (QFileInfo file(changes[8]); !file.isWritable()) {
         return false;
     }
-
     TagLib::FileRef f(changes[8].toStdString().data());
-//    std::cout << "line 382\n" << std::endl;
-
     if (!f.isNull() && f.tag())
     {
         TagLib::Tag *tag = f.tag();
@@ -350,9 +343,6 @@ QImage load_cover_image_m4a(char *file_path)
         TagLib::MP4::CoverArt coverArt = coverArtList.front();
         image.loadFromData((const uchar *)
                                    coverArt.data().data(), coverArt.data().size());
-//        if (image.size().width() > 200 || image.size().height() > 200) {
-//            image = image.scaled(200, 200);
-//        }
         return QImage();
     }
 }
@@ -363,7 +353,7 @@ QImage load_cover_image_ogg(char *file_path) {
 
 bool set_image_mpeg(char *file_path, char *image_path)
 {
-    QFile file(file_path);
+    QFileInfo file(file_path);
     if (!file.isWritable()) {
         return false;
     }
