@@ -64,7 +64,6 @@ private slots:
 
     void on_actionlog_triggered();
 
-//    void on_pushButton_2_clicked();
     void on_search_line_editingFinished();
 
 private:

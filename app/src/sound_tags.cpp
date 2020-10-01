@@ -2,7 +2,6 @@
 
 #include "sound_tags.h"
 
-#include <utility>
 
 using std::cout, std::endl;
 

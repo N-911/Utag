@@ -20,11 +20,13 @@ include_directories(../build/3dparty/taglib/)
 
 
 add_compile_options(
-    -std=c++1y
-#    -Werror
-#    -Wall
-#    -Wextra
-#    -Wpedantic
+        -std=c++17
+#        -Wdev
+#         -Werror
+         -Wall
+         -Wextra
+         -Wpedantic
+#        -Wno-unused-parameter
 )
 
 set(CMAKE_AUTOUIC ON)

@@ -1,30 +1,11 @@
 #include "mainwindow.h"
 #include "sound_tags.h"
 #include "ui_mainwindow.h"
+
 #include <QFileDialog>
 #include <algorithm>
 
 //    {"Name", "Time", "Title", "Artist", "Genre", "Album", "Year", "Track", "Path", "Comment" };
-
-//#define T___NAME 0
-//#define T___TIME 1
-//#define V__TITLE 2
-//#define V_ARTIST 3
-//#define V__GENRE 4
-//#define V__ALBUM 5
-//#define T___YEAR 6
-//#define T__TRACK 7
-//#define T___COMT 8
-
-//#define V___NAME 0
-//#define V___TIME 1
-//#define V__TITLE 2
-//#define V_ARTIST 3
-//#define V__GENRE 4
-//#define V__ALBUM 5
-//#define V___YEAR 6
-//#define V__TRACK 7
-//#define V___COMT 8
 
 #define default_cover ":/logo1.png"
 
@@ -200,14 +181,6 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_mainMusicTable_doubleClicked(const QModelIndex &index)
 {
     QVector<QString> current = m_music_list[index.row()];
-
-    //    QImage coverQImg = load_cover_image(m_music_list[index.row()][8].toStdString().data());
-    //    ui->statusbar->showMessage(tr("image loaded"), 200);
-    //    QGraphicsScene *scene = new QGraphicsScene();
-    //    ui->imageSong->setScene(scene);
-    //    QGraphicsPixmapItem *item = new QGraphicsPixmapItem(QPixmap::fromImage(coverQImg));
-    //    scene->addItem(item);
-    //    ui->imageSong->show();
     outputCurrentInfo(current, index);
     setMusicPlay(current[8]);
 

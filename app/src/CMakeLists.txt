@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 
+project(utag VERSION 1.0 LANGUAGES CXX)
+
 set(SOURCES mainwindow.cpp
         sound_tags.cpp
         musictablemodel.cpp

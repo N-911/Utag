@@ -2,8 +2,9 @@
 #include <QImage>
 #include <mp4/mp4file.h>
 #include "tag_functions.h"
-//#define default_cover "./app/resources/logo1.png"
+
 #define default_cover ":/logo1.png"
+
 class ImageFile;
 
 /* Unsychronised lyrics/text transcription
@@ -282,7 +283,6 @@ void modify_tag_track(QVector<QString>& changes) {
     f.save();
 }
 
-//{"Name", "Time", "Title", "Artist", "Genre", "Album", "Year", "Track", "Path", "Comment" };
 
 bool modify_tags(QVector<QString>& changes) {
     if (QFileInfo file(changes[8]); !file.isWritable()) {
